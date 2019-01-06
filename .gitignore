@@ -1,17 +1,17 @@
 # Assignment 1
-gemOS-a1/gemOS.kernel
+assignment-1/gemOS.kernel
 
 
 # Assignment 2
-gemOS-a2/entry.o
-gemOS-a2/user/init.o
-gemOS-a2/gemOS.kernel
+assignment-2/entry.o
+assignment-2/user/init.o
+assignment-2/gemOS.kernel
 
 
 # Assignment 3
-gemOS-a3/schedule.o
-gemOS-a3/user/init.o
-gemOS-a3/gemOS.kernel
+assignment-3/schedule.o
+assignment-3/user/init.o
+assignment-3/gemOS.kernel
 
 
 # Assignment 4

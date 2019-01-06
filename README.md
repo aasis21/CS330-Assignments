@@ -16,4 +16,4 @@ Instructions for setting up gemOS is given in this [pdf](./gemos-howto.pdf).
 
 
 ### Instructions
-Follow the instructions in [how-to](./gemos-howto.pdf) pdf make use of start(./start.sh) script.
+Follow the instructions in [how-to](./gemos-howto.pdf) pdf make use of [start](./start.sh) script.
