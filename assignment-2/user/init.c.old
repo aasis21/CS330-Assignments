@@ -1,0 +1,85 @@
+#include<init.h>
+#include<memory.h>
+static void exit(int);
+static int main(void);
+
+void init_start()
+{
+    int retval = main();
+    exit(0);
+}
+
+/*Invoke system call with no additional arguments*/
+static int _syscall0(int syscall_num)
+{
+    asm volatile ("int $0x80;"
+                  "leaveq;"
+                  "retq;"
+                  :::"memory");
+    return 0;   /*gcc shutup!*/
+}
+
+/*Invoke system call with one argument*/
+static int _syscall1(int syscall_num, int exit_code)
+{
+    asm volatile ("int $0x80;"
+                  "leaveq;"
+                  "retq;"
+                  :::"memory");
+    return 0;   /*gcc shutup!*/
+}
+
+/*Invoke system call with two arguments*/
+static int _syscall2(int syscall_num, long arg1, int arg2)
+{
+    asm volatile ("int $0x80;"
+                  "leaveq;"
+                  "retq;"
+                  :::"memory");
+    return 0;   /*gcc shutup!*/
+}
+
+static void exit(int code)
+{
+    _syscall1(SYSCALL_EXIT, code);
+}
+
+static int getpid()
+{
+    return(_syscall0(SYSCALL_GETPID));
+}
+
+static int write(char *buf, int length)
+{
+    return(_syscall2(SYSCALL_WRITE, (long) buf, length));
+}
+
+static int expand(u32 size, int flags)
+{
+    return(_syscall2(SYSCALL_EXPAND, size, flags));
+}
+
+static int shrink(u32 size, int flags)
+{
+    return(_syscall2(SYSCALL_SHRINK, size, flags));
+}
+
+int main()
+{
+#if 0
+    unsigned long i;
+    unsigned long *ptr = (unsigned long *)0x100032;
+    i = *ptr;
+#endif
+    getpid();
+    char* buf;
+    /* buf = (char*) 0xFFFFFFF; */
+    buf = "yo";
+    write(buf, 4);
+    expand(5, MAP_RD);
+    int a = 1 / 0;
+    shrink(2, MAP_RD);
+    /* shrink(0xFFFFF, MAP_RD); */
+    exit(0);
+    return 0;
+}

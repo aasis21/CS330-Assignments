@@ -1,0 +1,43 @@
+# Assignment 1
+gemOS-a1/gemOS.kernel
+
+
+# Assignment 2
+gemOS-a2/entry.o
+gemOS-a2/user/init.o
+gemOS-a2/gemOS.kernel
+
+
+# Assignment 3
+gemOS-a3/schedule.o
+gemOS-a3/user/init.o
+gemOS-a3/gemOS.kernel
+
+
+# Assignment 4
+assignment-4/*.o
+assignment-4/objfs
+assignment-4/objfs_cached
+
+assignment-4/test/*.o
+assignment-4/test/put
+assignment-4/test/get
+assignment-4/test/tester
+
+assignment-4/example/*.o
+assignment-4/example/objfs
+
+assignment-4/example/test/*.o
+assignment-4/example/test/put
+assignment-4/example/test/get
+assignment-4/example/test/delete
+assignment-4/example/test/update
+assignment-4/example/test/rename
+
+assignment-4/testcases/*.o
+assignment-4/testcases/lib/*.o
+assignment-4/testcases/create
+assignment-4/testcases/delete
+assignment-4/testcases/read
+assignment-4/testcases/rename
+assignment-4/testcases/update
